@@ -14,6 +14,12 @@ div {
 	outline: 1px solid #f00;
 }
 
+p {
+	font-size: 1.5em;
+	line-height: 30px;
+	text-align: center;
+}
+
 .container{
 	height: 100%;
 	width: 100%;
@@ -22,5 +28,50 @@ div {
 .container-inside{
 	height: 250px;
 	margin: 0 auto;
+	padding: 10px;
 	width: 300px;
 }
+
+.quiz-top{
+	background-color: #ccc;
+	height: 250px;
+	width: 300px;
+}
+
+.quiz-bottom{
+	background-color: #fff;
+	height: 80px;
+	line-height: 25px;
+	margin-top: 20px;
+	/*padding: 10px 10px 0 10px;*/
+	width: 100%;
+}
+
+.quiz-box{
+	height: 100%;
+	width: 100%;
+}
+
+.answers ul {
+	text-align: center;
+}
+
+.answers li {
+	list-style: none;
+  	list-style-type: none;
+	text-align: center;
+	text-decoration: none;
+}
+
+.one {
+	/*opacity: 0;*/
+}
+
+.two {
+	opacity: 0;
+}
+
+.three {
+	opacity: 0;
+}
+
