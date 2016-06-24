@@ -11,7 +11,7 @@ body {
 }
 
 div {
-	outline: 1px solid #f00;
+	/*outline: 1px solid #f00;*/
 }
 
 p {
@@ -20,25 +20,27 @@ p {
 	text-align: center;
 }
 
-.container{
+.container {
 	height: 100%;
+	overflow: hidden;
 	width: 100%;
 }
 
-.container-inside{
+.container-inside {
+	border: 1px solid #000;
 	height: 250px;
 	margin: 0 auto;
 	padding: 10px;
 	width: 300px;
 }
 
-.quiz-top{
+.quiz-top {
 	background-color: #ccc;
 	height: 250px;
 	width: 300px;
 }
 
-.quiz-bottom{
+.quiz-bottom {
 	background-color: #fff;
 	height: 80px;
 	line-height: 25px;
@@ -47,9 +49,11 @@ p {
 	width: 100%;
 }
 
-.quiz-box{
+.quiz-box {
 	height: 100%;
 	width: 100%;
+	position: relative;
+	z-index: 2;
 }
 
 .answers ul {
@@ -61,6 +65,80 @@ p {
   	list-style-type: none;
 	text-align: center;
 	text-decoration: none;
+}
+
+.answers li:hover {
+	cursor: pointer;
+	color: #24A8D4;
+}
+
+.marvin {
+	background: url('../img/marvin.jpg') no-repeat;
+	background-size: cover;
+	height: 250px;
+	opacity: .5;
+	position: absolute;
+	top: 11px;
+    width: 300px;
+}
+
+.snoopy {
+	background: url('../img/snoopy.jpg') no-repeat;
+	background-size: cover;
+	height: 250px;
+	opacity: 0;
+	position: absolute;
+	top: 11px;
+    width: 300px;
+}
+
+.yatch {
+	background: url('../img/yatch.jpg') no-repeat;
+	background-size: cover;
+	height: 250px;
+	opacity: 0;
+	position: absolute;
+	top: 11px;
+    width: 300px;
+}
+
+.correct-image {
+	background: url('../img/technically_correct_futurama.gif') no-repeat;
+	background-size: cover;
+	height: 250px;
+	opacity: 0;
+	position: absolute;
+	top: 11px;
+    width: 300px;
+}
+
+.incorrect-image {
+	background: url('../img/wrong.gif') no-repeat;
+	background-size: cover;
+	height: 250px;
+	opacity: 0;
+	position: absolute;
+	top: 11px;
+    width: 300px;
+}
+
+.next {
+	background-color: #fff;
+	border: 2px solid #24A8D4;
+	border-radius: 2px;
+	color: #24A8D4;
+	cursor: pointer;
+	height: 23px;
+	position: absolute;
+	right: 381px;
+	text-align: center;
+	top: 19px;
+	width: 77px;
+	z-index: 10;
+}
+
+.next:hover {
+	color: #999;
 }
 
 .one {
