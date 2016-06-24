@@ -11,7 +11,7 @@ body {
 }
 
 div {
-	outline: 1px solid;
+	outline: 1px solid #f00;
 }
 
 .container{
@@ -21,5 +21,6 @@ div {
 
 .container-inside{
 	height: 250px;
+	margin: 0 auto;
 	width: 300px;
 }
