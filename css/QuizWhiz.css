@@ -1,0 +1,25 @@
+img {
+	border: none;
+	outline: none
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+div {
+	outline: 1px solid;
+}
+
+.container{
+	height: 100%;
+	width: 100%;
+}
+
+.container-inside{
+	height: 250px;
+	width: 300px;
+}
