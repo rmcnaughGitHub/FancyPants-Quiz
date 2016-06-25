@@ -49,6 +49,10 @@ p {
 	width: 100%;
 }
 
+.quiz-bottom-lower {
+	margin-top: 100px;
+}
+
 .quiz-box {
 	height: 100%;
 	width: 100%;
@@ -86,7 +90,7 @@ p {
 	background: url('../img/snoopy.jpg') no-repeat;
 	background-size: cover;
 	height: 250px;
-	opacity: 0;
+	opacity: 1;
 	position: absolute;
 	top: 11px;
     width: 300px;
