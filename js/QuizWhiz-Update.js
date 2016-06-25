@@ -17,11 +17,13 @@ $(function(){
 	rightAnswer = false,
 	count = 0;
 
-	var quizArr = [
+	var quizQuestions,
+	quizArr = [
 		$one,
 		$two,
 		$three
 	];
+
 
 	//FUNCTIONS
 	function opacitySwitch(object, percentage, time = 300) {
@@ -33,20 +35,37 @@ $(function(){
 	};
 
 
-	function fadeinTime(object, percentage, currentDiv){
-		setInterval(function(){
-			currentDiv = current;
-			opacitySwitch(object, percentage);
-		},300);
-	};
-
-
 	function switchQuiz(){
+
 		opacitySwitch($one, 0);
 		opacitySwitch($two, 0);
 		opacitySwitch($three, 0);
 
-		if( current == $one ){
+		for ( var i = 0; i < quizArr.length; i++ ) {
+			if ( quizArr[0].css('opacity') == 1 ){
+				opacitySwitch(quizArr[0], 0);
+				opacitySwitch($marvin, 0);
+				opacitySwitch(quizArr[1], 1, 1200);
+				$('.quiz-three').removeClass('margin-Big-final');
+				console.log('two');
+			}
+			if ( quizArr[1].css('opacity') == 1 ){
+				opacitySwitch(quizArr[1], 0);
+				opacitySwitch($snoopy, 0);
+				opacitySwitch(quizArr[2], 1, 1200);
+				$('.quiz-three').removeClass('margin-Big-final');
+				console.log('two');
+			}
+		}
+
+		if ( rightAnswer == true ){
+			opacitySwitch($correctImage, 1);
+		}else{
+			opacitySwitch($inCorrectImage, 1);
+		}
+
+		console.log("CURRENT PAGE ",current);
+		/*if( current == $one ){
 			opacitySwitch($one, 0);
 			opacitySwitch($marvin, 0);
 			opacitySwitch($two, 1, 1200);
@@ -67,9 +86,8 @@ $(function(){
 			opacitySwitch($correctImage, 1);
 		}else{
 			opacitySwitch($inCorrectImage, 1);
-		}
-		//console.log('current ',current,' Opacity ', current.css('opacity'));
-		console.log("CURRENT PAGE ",current)
+		}*/
+		
 	};
 
 
@@ -113,7 +131,24 @@ $(function(){
 		$inCorrectImage.removeClass('display-block').addClass('display-none');
 		$next.removeClass('display-block').addClass('display-none');
 
-		if( current == $one ){
+		for ( var i = 0; i < quizArr.length; i++ ) {
+			if ( quizArr[0].css('opacity') == 1 ){
+				opacitySwitch(quizArr[0], 0);
+				opacitySwitch($marvin, 0);
+				opacitySwitch(quizArr[1], 1, 1200);
+				$('.quiz-three').removeClass('margin-Big-final');
+				console.log('two');
+			}
+			if ( quizArr[1].css('opacity') == 1 ){
+				opacitySwitch(quizArr[1], 0);
+				opacitySwitch($snoopy, 0);
+				opacitySwitch(quizArr[2], 1, 1200);
+				$('.quiz-three').removeClass('margin-Big-final');
+				console.log('two');
+			}
+		}
+
+		/*if( current == $one ){
 			opacitySwitch($two, 1);
 			opacitySwitch($snoopy, 1);
 			$one.removeClass('display-block').addClass('display-none');
@@ -126,7 +161,7 @@ $(function(){
 			$two.removeClass('display-block').addClass('display-none');
 			// console.log('Two');
 			current = $three;	
-		}
+		}*/
 
 		console.log('Current Div ', current);
 	});
