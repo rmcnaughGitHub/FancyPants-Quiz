@@ -24,7 +24,7 @@ $(function(){
 	];
 
 	//FUNCTIONS
-	function opacitySwitch(object, percentage, time = 300) {
+	function opacitySwitch(object, percentage, time = 700) {
 		if( object.hasClass('display-none') ){
 			object.removeClass('display-none').addClass('display-block');
 		}
@@ -104,14 +104,15 @@ $(function(){
 	$('.next').click(function(e){
 		e.preventDefault();
 
-		opacitySwitch($correctImage,0);
-		opacitySwitch($inCorrectImage,0);
-		opacitySwitch($next,0);
-
-		
-		$correctImage.removeClass('display-block').addClass('display-none');
-		$inCorrectImage.removeClass('display-block').addClass('display-none');
-		$next.removeClass('display-block').addClass('display-none');
+		opacitySwitch($correctImage,0, function(){
+			$correctImage.removeClass('display-block').addClass('display-none');
+		});
+		opacitySwitch($inCorrectImage,0, function(){
+			$inCorrectImage.removeClass('display-block').addClass('display-none');
+		});
+		opacitySwitch($next,0, function(){
+			$next.removeClass('display-block').addClass('display-none');
+		});
 
 		if( current == $one ){
 			opacitySwitch($two, 1);
