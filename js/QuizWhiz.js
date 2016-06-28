@@ -2,6 +2,7 @@ $(function(){
 
 	'use strict'
 
+	//ELEMENTS
 	var $one = $('.one'),
 	$two = $('.two'),
 	$three = $('.three'),
@@ -15,17 +16,29 @@ $(function(){
 	$correctImage = $('.correct-image'),
 	$inCorrectImage = $('.incorrect-image');
 
+	//GLOBAL VARS
 	var current = $one,
 	rightAnswer = false,
 	count = 0;
 
-	var quizArr = [
+	//QUIZ
+	var dataSource = './data/quiz.json',
+	quizArrMC = [
 		$one,
 		$two,
 		$three
 	];
 
 	//FUNCTIONS
+	/*$.getJSON(dataSource, function(json){
+		console.log(json);
+	});*/
+	function Json(quizQues, quizAns){
+		var quizQues = JSON.parse(quiz.question);
+		var quizAns = JSON.parse(quiz.answers);
+		console.log('quizQues ',quizQues, ' : ', 'quizAns ',quizAns);
+		return [quizQues, quizAns];
+	}
 	function opacitySwitch(object, percentage, time) {
 		//default param for Safari fix
 		if ( time == undefined ){
