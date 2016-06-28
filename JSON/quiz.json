@@ -1,22 +1,25 @@
+//http://www.jsoneditoronline.org/
+//https://github.com/Matt-Webb/jquery-quiz-using-json
+
 {
- "question1": {
-	    "What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?": "true",
-	    "Marvin": "true",
-	    "Robor": "false",
-	    "Mr. Pickles": "false"
-  },
+ "question1": "What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?",
+		 	"answers1": {
+			    "Marvin": "true",
+			    "Robor": "false",
+			    "Mr. Pickles": "false"
+		 	},
 
-  "question2": {
-	    "Who created Snoopy?": "true",
-	    "Alvin Barnes": "false",
-	    "Jon Casey": "false",
-	    "Charles M. Schulz": "true"
-  },
+  "question2":"Who created Snoopy?",
+			"answers2": {
+			    "Alvin Barnes": "false",
+			    "Jon Casey": "false",
+			    "Charles M. Schulz": "true"
+		  	},
 
-  "question3": {
-	    "Which measurement of speed is equivalent to one nautical mile per hour?": "true",
-	    "Parsec": "false",
-	    "Knot": "true",
-	    "Fathom": "false"
-  }
+  "question3": "Which measurement of speed is equivalent to one nautical mile per hour?",
+  		    "answers3": {
+			    "Parsec": "false",
+			    "Knot": "true",
+			    "Fathom": "false"
+	  		}
 }

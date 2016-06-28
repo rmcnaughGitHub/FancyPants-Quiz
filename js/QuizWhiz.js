@@ -1,16 +1,18 @@
 $(function(){
 
-	$one = $('.one');
-	$two = $('.two');
-	$three = $('.three');
+	'use strict'
 
-	$next = $('.next');
+	var $one = $('.one'),
+	$two = $('.two'),
+	$three = $('.three'),
 
-	$marvin = $('.marvin');
-	$snoopy = $('.snoopy');
-	$yatch = $('.yatch');
+	$next = $('.next'),
 
-	$correctImage = $('.correct-image');
+	$marvin = $('.marvin'),
+	$snoopy = $('.snoopy'),
+	$yatch = $('.yatch'),
+
+	$correctImage = $('.correct-image'),
 	$inCorrectImage = $('.incorrect-image');
 
 	var current = $one,
