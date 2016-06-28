@@ -118,10 +118,10 @@ p {
 	background: url('../img/technically_correct_futurama.gif') no-repeat;
 	background-size: cover;
 	height: 272px;
+	left: -10px;
     opacity: 0;
-    position: absolute;
-    right: 371px;
-    top: 0px;
+    position: relative;
+    top: -10px;
     width: 321px;
     z-index: 20;
 }
@@ -130,13 +130,12 @@ p {
 	background: url('../img/wrong.gif') no-repeat;
 	background-size: cover;
 	height: 272px;
+	left: -10px;
     opacity: 0;
-    position: absolute;
-    right: 371px;
-    top: 0px;
+    position: relative;
+    top: -10px;
     width: 321px;
     z-index: 20;
-    
 }
 
 .next {

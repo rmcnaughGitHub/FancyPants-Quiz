@@ -24,7 +24,11 @@ $(function(){
 	];
 
 	//FUNCTIONS
-	function opacitySwitch(object, percentage, time = 700) {
+	function opacitySwitch(object, percentage, time) {
+		//default param for Safari fix
+		if ( time == undefined ){
+			time = 700;
+		}
 		if( object.hasClass('display-none') ){
 			object.removeClass('display-none').addClass('display-block');
 		}
