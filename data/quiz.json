@@ -3,14 +3,21 @@
 //http://www.askyb.com/javascript/load-json-file-locally-by-js-without-jquery/
 
 
-quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams Hitchhiker’s Guide to the Galaxy?"}]';
+//WORKING
+quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?", "question2" : "Who created Snoopy?", "question3" : "Which measurement of speed is equivalent to one nautical mile per hour?"}]';
+answerOne = '[{"Marvin": "true", "Robor": "false", "Mr. Pickles": "false"}]';
+answerTwo = '[{"Alvin Barnes": "false", "Jon Casey": "false", "Charles M. Schulz": "true"}]';
+answerThree = '[{"Parsec": "false", "Knot": "true", "Fathom": "false"}]';
 
-/*quiz = [{
+//WORKING
+//quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams Hitchhiker’s Guide to the Galaxy?"}]';	
+
+
+//NOT WORKING
+/*quiz = '[{
 	 "question1":"What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?",
 			 	"answers1": {
-				    "Marvin": "true",
-				    "Robor": "false",
-				    "Mr. Pickles": "false"
+				    
 			 	},
 
 	  "question2":"Who created Snoopy?",
@@ -26,7 +33,4 @@ quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Ada
 				    "Knot": "true",
 				    "Fathom": "false"
 		  		}
-}];*/
-
-	
-//quiz = '[{"name" : "Harry", "age" : "32"}]';
+}]';*/

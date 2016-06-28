@@ -34,18 +34,23 @@ $(function(){
 		console.log(json);
 	});*/
 	function loadJson(quizQues, quizAns){
-		var quizQues = JSON.parse(quiz);
-		var quizAns = JSON.parse(quiz);
+		var quizQues = JSON.parse(quizQues);
+		var quizAns = JSON.parse(quizAns);
 		console.log('quizQues ',quizQues, ' : ', 'quizAns ',quizAns);
 		return [quizQues, quizAns];
 	};
-	//loadJson(question[0]+1, answers[0]+1);
+	//loadJson(quiz[0].question1, answerOne[0].Marvin);
 
 	function testLoad(){
 		var data = JSON.parse(quiz);
 		console.log(data[0].question1);
 	}
 	testLoad();
+	/*function testLoad(node, number, nodeValue){
+		var data = JSON.parse(node);
+		console.log(data[number].nodeValue);
+	}
+	testLoad(quiz, 0, question1);*/
 
 
 	function opacitySwitch(object, percentage, time) {
