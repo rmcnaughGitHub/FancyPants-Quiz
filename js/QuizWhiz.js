@@ -33,12 +33,21 @@ $(function(){
 	/*$.getJSON(dataSource, function(json){
 		console.log(json);
 	});*/
-	function Json(quizQues, quizAns){
-		var quizQues = JSON.parse(quiz.question);
-		var quizAns = JSON.parse(quiz.answers);
+	function loadJson(quizQues, quizAns){
+		var quizQues = JSON.parse(quiz);
+		var quizAns = JSON.parse(quiz);
 		console.log('quizQues ',quizQues, ' : ', 'quizAns ',quizAns);
 		return [quizQues, quizAns];
+	};
+	//loadJson(question[0]+1, answers[0]+1);
+
+	function testLoad(){
+		var data = JSON.parse(quiz);
+		console.log(data[0].question1);
 	}
+	testLoad();
+
+
 	function opacitySwitch(object, percentage, time) {
 		//default param for Safari fix
 		if ( time == undefined ){

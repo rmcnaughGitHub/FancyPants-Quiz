@@ -3,9 +3,9 @@
 //http://www.askyb.com/javascript/load-json-file-locally-by-js-without-jquery/
 
 
-quiz = [
+quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams Hitchhiker’s Guide to the Galaxy?"}]';
 
-	{
+/*quiz = [{
 	 "question1":"What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?",
 			 	"answers1": {
 				    "Marvin": "true",
@@ -26,9 +26,7 @@ quiz = [
 				    "Knot": "true",
 				    "Fathom": "false"
 		  		}
-	}
-
-];
+}];*/
 
 	
 //quiz = '[{"name" : "Harry", "age" : "32"}]';
