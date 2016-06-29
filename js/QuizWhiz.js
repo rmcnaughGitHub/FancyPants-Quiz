@@ -3,54 +3,56 @@ $(function(){
 	'use strict'
 
 	//ELEMENTS
-	var $one = $('.one'),
-	$two = $('.two'),
-	$three = $('.three'),
+	var $one = document.getElementById('one'),
+		$next = document.getElementById('next'),
+		$bgImage = document.getElementById('bg-image'),
+		$correctImage = document.getElementById('right'),
+		$inCorrectImage = document.getElementById('wrong'),
 
-	$next = $('.next'),
+		//GLOBAL VARS
+		current = $one,
+		rightAnswer = false,
+		count = 0,
 
-	$marvin = $('.marvin'),
-	$snoopy = $('.snoopy'),
-	$yatch = $('.yatch'),
+		//QUIZ
+		dataSource = './data/quiz.json',
+		quizArr = [],
+		questionText = document.getElementById('quest-text'),
+		answersOneText = document.getElementById('answersOne'),
+		answersTwoText = document.getElementById('answersTwo'),
+		answersThreeText = document.getElementById('answersThree'),
+		answersArr = [answersOneText,answersTwoText,answersThreeText];
 
-	$correctImage = $('.correct-image'),
-	$inCorrectImage = $('.incorrect-image');
-
-	//GLOBAL VARS
-	var current = $one,
-	rightAnswer = false,
-	count = 0;
-
-	//QUIZ
-	var dataSource = './data/quiz.json',
-	quizArrMC = [
-		$one,
-		$two,
-		$three
-	];
 
 	//FUNCTIONS
 	/*$.getJSON(dataSource, function(json){
 		console.log(json);
 	});*/
-	function loadJson(quizQues, quizAns){
-		var quizQues = JSON.parse(quizQues);
-		var quizAns = JSON.parse(quizAns);
-		console.log('quizQues ',quizQues, ' : ', 'quizAns ',quizAns);
-		return [quizQues, quizAns];
+	function loadJson(jsonFile){
+		var data = JSON.parse(jsonFile);
+		for (var i = 0; i<data.length; i++) {
+			questionText.innerHTML = data[i].question1;
+			answersArr.innerHTML = data[0].answers1;
+			//console.log('JSON file = ',data[i]);
+			console.log(data[i].answers1);
+			console.log(' ',answersArr.innerHTML);
+		}
+		return data;
 	};
-	//loadJson(quiz[0].question1, answerOne[0].Marvin);
+	loadJson(quiz);
 
-	function testLoad(){
-		var data = JSON.parse(quiz);
-		console.log(data[0].question1);
-	}
-	testLoad();
-	/*function testLoad(node, number, nodeValue){
+	/*function testLoad(node, number){
 		var data = JSON.parse(node);
-		console.log(data[number].nodeValue);
+		questionText.innerHTML = data[number].question1;
+		console.log(data[number].answers1);
 	}
-	testLoad(quiz, 0, question1);*/
+	testLoad(quiz, 0);
+	function jsonLoad(node, numberVal, nodeValue){
+		var data = JSON.parse(node);
+		return [node, numberVal, nodeValue];
+		console.log(data[numberVal].nodeValue);
+	}
+	jsonLoad(quiz, 0, question1);*/
 
 
 	function opacitySwitch(object, percentage, time) {
@@ -75,7 +77,7 @@ $(function(){
 
 
 	function switchQuiz(){
-		opacitySwitch($one, 0);
+		/*opacitySwitch($one, 0);
 		opacitySwitch($two, 0);
 		opacitySwitch($three, 0);
 
@@ -102,7 +104,7 @@ $(function(){
 			opacitySwitch($inCorrectImage, 1);
 		}
 		//console.log('current ',current,' Opacity ', current.css('opacity'));
-		console.log("CURRENT PAGE ",current)
+		console.log("CURRENT PAGE ",current)*/
 	};
 
 
@@ -137,7 +139,7 @@ $(function(){
 	$('.next').click(function(e){
 		e.preventDefault();
 
-		opacitySwitch($correctImage,0, function(){
+		/*opacitySwitch($correctImage,0, function(){
 			$correctImage.removeClass('display-block').addClass('display-none');
 		});
 		opacitySwitch($inCorrectImage,0, function(){
@@ -160,7 +162,7 @@ $(function(){
 			$two.removeClass('display-block').addClass('display-none');
 			// console.log('Two');
 			current = $three;	
-		}
+		}*/
 
 		console.log('Current Div ', current);
 	});

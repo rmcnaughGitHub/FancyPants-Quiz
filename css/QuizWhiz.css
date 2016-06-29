@@ -11,7 +11,7 @@ body {
 }
 
 div {
-	/*outline: 1px solid #f00;*/
+	outline: 1px solid #f00;
 }
 
 p {
@@ -45,9 +45,16 @@ p {
 	background-color: #fff;
 	height: 80px;
 	line-height: 25px;
-	margin-top: 20px;
-	/*padding: 10px 10px 0 10px;*/
+	/*margin-top: 150px;*/
 	width: 100%;
+}
+
+.quiz-p {
+	/*background-color: #fff;*/
+	height: 150px;
+	line-height: 25px;
+	width: 100%;
+	outline: 1px solid #456;
 }
 
 .quiz-bottom-lower {
@@ -61,11 +68,6 @@ p {
 	width: 100%;
 	position: relative;
 	z-index: 2;
-	/*top: 11px;
-	height: 250px;
-	width: 300px;
-	position: absolute;
-	z-index: 20;*/
 }
 
 .answers ul {

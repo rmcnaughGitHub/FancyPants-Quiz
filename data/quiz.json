@@ -2,23 +2,30 @@
 //https://github.com/Matt-Webb/jquery-quiz-using-json
 //http://www.askyb.com/javascript/load-json-file-locally-by-js-without-jquery/
 //http://stackoverflow.com/questions/14432165/uncaught-syntaxerror-unexpected-token-with-json-parse
+//http://jsonviewer.stack.hu/
 
 
 //WORKING
-quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?", "question2" : "Who created Snoopy?", "question3" : "Which measurement of speed is equivalent to one nautical mile per hour?"}]';
+/*quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?", "question2" : "Who created Snoopy?", "question3" : "Which measurement of speed is equivalent to one nautical mile per hour?"}]';
 answerOne = '[{"Marvin": "true", "Robor": "false", "Mr. Pickles": "false"}]';
 answerTwo = '[{"Alvin Barnes": "false", "Jon Casey": "false", "Charles M. Schulz": "true"}]';
-answerThree = '[{"Parsec": "false", "Knot": "true", "Fathom": "false"}]';
+answerThree = '[{"Parsec": "false", "Knot": "true", "Fathom": "false"}]';*/
+
+
+//WORKING
+quiz='[{ 	 "question1":"What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?", "answers1": { "Marvin": "true", "Robor": "false", "Mr. Pickles": "false" }, "question2":"Who created Snoopy?", "answers2": { "Alvin Barnes": "false", "Jon Casey": "false", "Charles M. Schulz": "true" }, "question3":"Which measurement of speed is equivalent to one nautical mile per hour?", "answers3": { "Parsec": "false", "Knot": "true", "Fathom": "false" } }]';
 
 //WORKING
 //quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams Hitchhiker’s Guide to the Galaxy?"}]';	
 
 
-//NOT WORKING
-/*quiz = '[{
+/*//NOT WORKING
+quiz = '[{
 	 "question1":"What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?",
 			 	"answers1": {
-				    
+				    "Marvin": "true", 
+				    "Robor": "false", 
+				    "Mr. Pickles": "false"
 			 	},
 
 	  "question2":"Who created Snoopy?",
