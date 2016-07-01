@@ -32,14 +32,15 @@ $(function(){
 		var data = JSON.parse(jsonFile);
 		for (var i = 0; i<data.length; i++) {
 			questionText.innerHTML = data[i].question1;
-			answersArr.innerHTML = data[0].answers1;
+			answersOneText.innerHTML = data[i].answer1;
 			//console.log('JSON file = ',data[i]);
-			console.log(data[i].answers1);
-			console.log(' ',answersArr.innerHTML);
+			//console.log(answersArr.innerHTML);
+			console.log(data[i].answer1);
 		}
 		return data;
 	};
 	loadJson(quiz);
+
 
 	/*function testLoad(node, number){
 		var data = JSON.parse(node);
