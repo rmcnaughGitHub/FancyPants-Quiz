@@ -7,13 +7,13 @@
 
 //WORKING
 /*quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?", "question2" : "Who created Snoopy?", "question3" : "Which measurement of speed is equivalent to one nautical mile per hour?"}]';
-answerOne = '[{"Marvin": "true", "Robor": "false", "Mr. Pickles": "false"}]';
-answerTwo = '[{"Alvin Barnes": "false", "Jon Casey": "false", "Charles M. Schulz": "true"}]';
-answerThree = '[{"Parsec": "false", "Knot": "true", "Fathom": "false"}]';*/
+answerOne = '[{"Marvin": true, "Robor": false, "Mr. Pickles": false}]';
+answerTwo = '[{"Alvin Barnes": false, "Jon Casey": false, "Charles M. Schulz": true}]';
+answerThree = '[{"Parsec": false, "Knot": true, "Fathom": false}]';*/
 
 
 //WORKING
-quiz='[{ 	 "question1":"What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?", "answer1": { "Marvin": "true", "Robor": "false", "Mr. Pickles": "false" }, "question2":"Who created Snoopy?", "answer2": { "Alvin Barnes": "false", "Jon Casey": "false", "Charles M. Schulz": "true" }, "question3":"Which measurement of speed is equivalent to one nautical mile per hour?", "answer3": { "Parsec": "false", "Knot": "true", "Fathom": "false" } }]';
+quiz='[{ 	 "question1":"What is the name of the Paranoid Android in Douglas Adams’ Hitchhiker’s Guide to the Galaxy’?", "answer1": { "Marvin": true, "Robor": false, "Mr. Pickles": false }, "question2":"Who created Snoopy?", "answer2": { "Alvin Barnes": false, "Jon Casey": false, "Charles M. Schulz": true }, "question3":"Which measurement of speed is equivalent to one nautical mile per hour?", "answer3": { "Parsec": false, "Knot": true, "Fathom": false } }]';
 
 //WORKING
 //quiz = '[{"question1" : "What is the name of the Paranoid Android in Douglas Adams Hitchhiker’s Guide to the Galaxy?"}]';	
