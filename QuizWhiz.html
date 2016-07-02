@@ -1,59 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz Whiz</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/QuizWhiz.css" type="text/css" />
-
-  </head>
-  <body>
-
-  	<div class="container">
-
-	  	<div class="container-inside">
-
-
-	  		<!--TOP-->
-	  		<div class="quiz-top">
-
-	  			<!--ONE-->
-	  			<div id="one" class="quiz-box display-block" data-rel="quiz-main">
-		  			<p id="quest-text" class="quiz-p"></p>
-
-		  			<div class="quiz-bottom">
-			  			<ul class="answers">
-			  				<li id="answersOne" class="answer-one"></li>
-			  				<li id="answersTwo" class="answer-two"></li>
-			  				<li id="answersThree" class="answer-three"></li>
-			  			</ul>
-		  			</div>
-		  			
-		   		</div>
-		   		<div id="bg-image" class="background-image"></div>
-
-		   		<!--NEXT-->
-		   		<div id="next" class="next display-none">Next</div>
-
-		   		<!--CORRECT-->
-		   		<div id="right" class="correct-image display-none margin-Bottom-Big"></div>
-		   		<!--IN-CORRECT-->
-		   		<div id="wrong" class="incorrect-image display-none margin-Bottom-Big"></div>
-
-	   		</div>
-
-
-	    </div>
-   
-    </div>
-
-
-  <!-- javascript -->
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="data/quiz.json"></script>
-  <script src="js/QuizWhiz.js"></script>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Quiz Whiz</title>
+	<link rel="stylesheet" href="css/QuizWhiz.css" type="text/css" />
+</head>
+<body>
+	<div class="container">
+		<div id="quiz">
+			<p id="question"></p>
+			<div id="answers"></div>
+			<div id="response" class="feedback">
+				<a href="javascript:;" id="next" class="next">Next</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/quiz.js"></script>
+	<script src="js/QuizWhiz.js"></script>
 </body>
 </html>

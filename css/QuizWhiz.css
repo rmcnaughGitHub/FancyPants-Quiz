@@ -1,17 +1,9 @@
-img {
-	border: none;
-	outline: none
-}
-* {
-	margin: 0;
-	padding: 0;
-}
-body {
-	font-family: Tahoma, Geneva, sans-serif;
+html, body{
+	width: 100%; height: 100%;
 }
 
-div {
-	outline: 1px solid #f00;
+body {
+	font-family: Tahoma, Geneva, sans-serif;
 }
 
 p {
@@ -21,35 +13,22 @@ p {
 }
 
 .container {
-	height: 100%;
-	overflow: hidden;
-	width: 100%;
-}
-
-.container-inside {
+	width: 300px; height: 250px;
+	position: relative; top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto; padding: 10px;
 	border: 1px solid #000;
-	height: 250px;
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 10px;
-	width: 300px;
-}
-
-.quiz-top {
-	background-color: #ccc;
-	height: 250px;
-	width: 300px;
-}
-
-.quiz-bottom {
 	background-color: #fff;
-	height: 80px;
-	line-height: 25px;
-	/*margin-top: 150px;*/
-	width: 100%;
+	overflow: hidden;
 }
 
-.quiz-p {
+#quiz{
+	width: 100%; height: 100%;
+	position: relative; z-index: 10;
+	background: #ccc;
+}
+
+#question {
 	/*background-color: #fff;*/
 	height: 150px;
 	line-height: 25px;
@@ -57,18 +36,98 @@ p {
 	outline: 1px solid #456;
 }
 
-.quiz-bottom-lower {
-	margin-top: 100px;
+#quiz p{
+	font-size: 21px;
+	padding: 20px 0 0;
 }
 
-.quiz-box {
-	display: block;
-	float: left;
-	height: 100%;
+#answers{
+	position: absolute; bottom: 20px;
+	background-color: #fff;
 	width: 100%;
-	position: relative;
-	z-index: 2;
 }
+
+#answers a{
+	display: block;
+	padding: 5px 0;
+	text-align: center;
+	color: #ccc;
+}
+
+#answers a:hover{
+	color: #24A8D4;
+}
+
+#response{
+	display: none; width: 100%; height: 100%;
+	position: absolute; top: 0; left: 0; z-index: 20;
+}
+
+#response p{
+	display: block;
+	position: relative; top: 50%;
+	transform: translateY(-50%);
+	padding: 0 20px;
+	text-align: center;
+}
+
+#response a{
+	display: block;
+	background-color: #fff;
+	border: 2px solid #24A8D4;
+	border-radius: 2px;
+	color: #24A8D4;
+	cursor: pointer;
+	height: 23px;
+	margin: 0 0 0 210px;
+	position: absolute;
+	text-align: center;
+	top: 19px;
+	width: 77px;
+	z-index: 22;
+}
+
+#response a:hover {
+	color: #999;
+}
+
+.feedback{
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #000;
+}
+
+.feedback.correct{
+	background-image: url('../img/technically_correct_futurama.gif');
+}
+
+.feedback.incorrect{
+	background-image: url('../img/wrong.gif');
+}
+
+.feedback.active{
+	display: block !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .answers ul {
 	text-align: center;
@@ -85,6 +144,62 @@ p {
 	cursor: pointer;
 	color: #24A8D4;
 }
+
+
+
+
+
+
+
+img {
+	border: none;
+	outline: none
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+div {
+	outline: 1px solid #f00;
+}
+
+
+
+
+.container-inside {
+	border: 1px solid #000;
+	height: 250px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 10px;
+	width: 300px;
+}
+
+.quiz-top {
+	background-color: #ccc;
+	height: 250px;
+	width: 300px;
+}
+
+
+
+
+.quiz-bottom-lower {
+	margin-top: 100px;
+}
+
+.quiz-box {
+	display: block;
+	float: left;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+
 
 .marvin {
 	background: url('../img/marvin.jpg') no-repeat;
@@ -116,49 +231,8 @@ p {
     width: 300px;  
 }
 
-.correct-image {
-	background: url('../img/technically_correct_futurama.gif') no-repeat;
-	background-size: cover;
-	height: 272px;
-	left: -10px;
-    opacity: 0;
-    position: relative;
-    top: -10px;
-    width: 321px;
-    z-index: 20;
-}
 
-.incorrect-image {
-	background: url('../img/wrong.gif') no-repeat;
-	background-size: cover;
-	height: 272px;
-	left: -10px;
-    opacity: 0;
-    position: relative;
-    top: -10px;
-    width: 321px;
-    z-index: 20;
-}
 
-.next {
-	background-color: #fff;
-	border: 2px solid #24A8D4;
-	border-radius: 2px;
-	color: #24A8D4;
-	cursor: pointer;
-	height: 23px;
-	margin: 0 0 0 210px;
-	opacity: 0;
-	position: absolute;
-	text-align: center;
-	top: 19px;
-	width: 77px;
-	z-index: 22;
-}
-
-.next:hover {
-	color: #999;
-}
 
 .display-block {
 	display: block;
@@ -169,7 +243,7 @@ p {
 }
 
 .one {
-	/*opacity: 0;*/
+
 }
 
 .two {

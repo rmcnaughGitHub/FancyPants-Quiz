@@ -1,173 +1,107 @@
-$(function(){
+'use strict'
 
-	'use strict'
+/*
+ * Either assign quiz to already established quiz or start over!!!
+ */
+var quiz = window.quiz || {};
 
-	//ELEMENTS
-	var $one = document.getElementById('one'),
-		$next = document.getElementById('next'),
-		$bgImage = document.getElementById('bg-image'),
-		$correctImage = document.getElementById('right'),
-		$inCorrectImage = document.getElementById('wrong'),
+quiz = {
 
-		//GLOBAL VARS
-		current = $one,
-		rightAnswer = false,
-		count = 0,
+	element: null,
+	question: null,
+	answers: null,
+	response: null,
+	next: null,
+	data: null,
+	index: null,
+	feedbackResponse: null,
 
-		//QUIZ
-		dataSource = './data/quiz.json',
-		quizArr = [],
-		questionText = document.getElementById('quest-text'),
-		answersOneText = document.getElementById('answersOne'),
-		answersTwoText = document.getElementById('answersTwo'),
-		answersThreeText = document.getElementById('answersThree'),
-		answersArr = [answersOneText,answersTwoText,answersThreeText];
+	/*
+	 * Initialize object variables
+	 */
+	init: function(){
+		quiz.element = document.querySelector('#quiz');
+		quiz.question = document.querySelector('#question');
+		quiz.answers = document.querySelector('#answers');
+		quiz.response = document.querySelector('#response');
+		quiz.nextButton = document.querySelector('#next');
+		quiz.data = quiz.load();
+		quiz.index = 0;
+		quiz.next();
+		quiz.setup();
+	},
 
+	/*
+	 * Load all external data
+	 */
+	load: function(){
+		// XHR Request for server data
+		// Assing quiz.data to XHR response
+		// Intead we did below cause we like fun...
+		return(JSON.parse(quizData));
+	},
 
-	//FUNCTIONS
-	/*$.getJSON(dataSource, function(json){
-		console.log(json);
-	});*/
-	function loadJson(jsonFile){
-		var data = JSON.parse(jsonFile);
-		for (var i = 0; i<data.length; i++) {
-			questionText.innerHTML = data[i].question1;
-			answersOneText.innerHTML = data[i].answer1;
-			//console.log('JSON file = ',data[i]);
-			//console.log(answersArr.innerHTML);
-			console.log(data[i].answer1);
-		}
-		return data;
-	};
-	loadJson(quiz);
-
-
-	/*function testLoad(node, number){
-		var data = JSON.parse(node);
-		questionText.innerHTML = data[number].question1;
-		console.log(data[number].answers1);
-	}
-	testLoad(quiz, 0);
-	function jsonLoad(node, numberVal, nodeValue){
-		var data = JSON.parse(node);
-		return [node, numberVal, nodeValue];
-		console.log(data[numberVal].nodeValue);
-	}
-	jsonLoad(quiz, 0, question1);*/
-
-
-	function opacitySwitch(object, percentage, time) {
-		//default param for Safari fix
-		if ( time == undefined ){
-			time = 700;
-		}
-		if( object.hasClass('display-none') ){
-			object.removeClass('display-none').addClass('display-block');
-		}
-		object.animate({opacity: percentage}, time);
-		//console.log( object, ' ', 'opacity ', object.css('opacity'));
-	};
-
-
-	function fadeinTime(object, percentage, currentDiv){
-		setInterval(function(){
-			currentDiv = current;
-			opacitySwitch(object, percentage);
-		},300);
-	};
-
-
-	function switchQuiz(){
-		/*opacitySwitch($one, 0);
-		opacitySwitch($two, 0);
-		opacitySwitch($three, 0);
-
-		if( current == $one ){
-			opacitySwitch($one, 0);
-			opacitySwitch($marvin, 0);
-			opacitySwitch($two, 1, 1200);
-			$('.quiz-three').removeClass('margin-Big-final');
-			//fadeinTime($two, 1, $two);
-			console.log('two');
-		}
-		else if( current == $two ){
-			opacitySwitch($two, 0);
-			opacitySwitch($snoopy, 0);
-			opacitySwitch($three, 1, 1200);
-			$('.quiz-three').addClass('margin-Big-final');
-			//fadeinTime($three, 1, $three);	
-			$two.removeClass('display-block').addClass('display-none');
-			console.log('three');
-		}
-		if ( rightAnswer == true ){
-			opacitySwitch($correctImage, 1);
-		}else{
-			opacitySwitch($inCorrectImage, 1);
-		}
-		//console.log('current ',current,' Opacity ', current.css('opacity'));
-		console.log("CURRENT PAGE ",current)*/
-	};
-
-
-	$('.correct').click(function(e){
-		e.preventDefault();
-		rightAnswer = true;
-		if( current == $three ){
-			opacitySwitch($next, 0);
-			$next.removeClass('display-block').addClass('display-none');
-		}else{
-			opacitySwitch($next, 1);
-		}
-		switchQuiz();
-		console.log('Correct');
-	});
-
-	$('.in-correct').click(function(e){
-		e.preventDefault();
-		rightAnswer = false;
-		if( current == $three ){
-			opacitySwitch($next, 0);
-			$next.removeClass('display-block').addClass('display-none');
-		}else{
-			opacitySwitch($next, 1);
-		}	
-		switchQuiz();
-		console.log('In-Correct');
-	});
-
-
-
-	$('.next').click(function(e){
-		e.preventDefault();
-
-		/*opacitySwitch($correctImage,0, function(){
-			$correctImage.removeClass('display-block').addClass('display-none');
+	/*
+	 * Set's up quiz
+	 */
+	setup: function(){
+		quiz.question.innerHTML = quiz.data.content[quiz.index].question;
+		quiz.data.content[quiz.index].answers.forEach(function(element, index){
+			var anchor = document.createElement('a');
+				anchor.href = "javascript:;"
+				anchor.dataset.value = element;
+				anchor.innerHTML = element;
+				anchor.classList.add('answers');
+				anchor.addEventListener('click', function(event){
+					var selectedAnswer = event.srcElement.dataset.value;
+					if(event.srcElement.dataset.value == quiz.data.content[quiz.index].correct){
+						quiz.feedbackResponse = 'correct';
+					}else{
+						quiz.feedbackResponse = 'incorrect';
+					}
+					quiz.feedback();
+					event.preventDefault();
+				});
+			/*
+			 * Appens anchor element we created above to the empty div #answers
+			 */
+			quiz.answers.appendChild(anchor);
 		});
-		opacitySwitch($inCorrectImage,0, function(){
-			$inCorrectImage.removeClass('display-block').addClass('display-none');
+	},
+
+	/*
+	 * Respond to an answer
+	 */
+	feedback: function(){
+		quiz.response.classList.add('active', quiz.feedbackResponse);
+	},
+
+	/*
+	 * Move to next question
+	 */
+	next: function(){
+		quiz.nextButton.addEventListener('click', function(event){
+			if(quiz.index == quiz.data.content.length - 1){
+				var conf = confirm("Do you want to restart?");
+				if(conf){
+					window.location.href = window.location.href;
+				}else{
+					alert('GET OFF MY QUIZ!!!')
+					window.location.href = 'http://www.google.com';
+				}
+			}else{
+				quiz.index++;
+				quiz.answers.innerHTML = "";
+				quiz.setup();
+				quiz.response.classList.remove('active', quiz.feedbackResponse);
+				event.preventDefault();
+			}
 		});
-		opacitySwitch($next,0, function(){
-			$next.removeClass('display-block').addClass('display-none');
-		});
+	},
 
-		if( current == $one ){
-			opacitySwitch($two, 1);
-			opacitySwitch($snoopy, 1);
-			$one.removeClass('display-block').addClass('display-none');
-			// console.log('One');
-			current = $two;	
-		}
-		else if( current == $two ){
-			opacitySwitch($three, 1);
-			opacitySwitch($yatch, 1);
-			$two.removeClass('display-block').addClass('display-none');
-			// console.log('Two');
-			current = $three;	
-		}*/
+};
 
-		console.log('Current Div ', current);
-	});
-
-
-
+document.addEventListener("DOMContentLoaded", function() {
+   quiz.init();
 });
+	
